@@ -1,0 +1,183 @@
+PROMPT
+ .\sd.exe -m .\dreamshaper_8.safetensors --cfg-scale 5 --steps 10 --sampling-method euler -H 768 -W 1344 -p "fantasy medieval village world inside a glass sphere , high detail, fantasy, realistic, light effect, hyper detail, volumetric lighting, cinematic, macro, depth of field, blur, red light and clouds from the back, highly detailed epic cinematic concept art cg render made in maya, blender and photoshop, octane render, excellent composition, dynamic dramatic cinematic lighting, aesthetic, very inspirational, world inside a glass sphere by james gurney by artgerm with james jean, joe fenton and tristan eaton by ross tran, fine details, 4k resolution"
+
+LOG
+[INFO ] stable-diffusion.cpp:195  - loading model from '.\dreamshaper_8.safetensors'
+[INFO ] model.cpp:888  - load .\dreamshaper_8.safetensors using safetensors format
+[INFO ] stable-diffusion.cpp:242  - Version: SD 1.x
+[INFO ] stable-diffusion.cpp:275  - Weight type:                 f16
+[INFO ] stable-diffusion.cpp:276  - Conditioner weight type:     f16
+[INFO ] stable-diffusion.cpp:277  - Diffusion model weight type: f16
+[INFO ] stable-diffusion.cpp:278  - VAE weight type:             f16
+  |==================================================| 1130/1130 - 125.00it/s
+[INFO ] stable-diffusion.cpp:516  - total params memory size = 1969.78MB (VRAM 0.00MB, RAM 1969.78MB): clip 235.06MB(RAM), unet 1640.25MB(RAM), vae 94.47MB(RAM), controlnet 0.00MB(VRAM), pmid 0.00MB(RAM)
+[INFO ] stable-diffusion.cpp:520  - loading model from '.\dreamshaper_8.safetensors' completed, taking 4.97s
+[INFO ] stable-diffusion.cpp:550  - running in eps-prediction mode
+[INFO ] stable-diffusion.cpp:682  - Attempting to apply 0 LoRAs
+[INFO ] stable-diffusion.cpp:1235 - apply_loras completed, taking 0.00s
+[INFO ] stable-diffusion.cpp:1368 - get_learned_condition completed, taking 1572 ms
+[INFO ] stable-diffusion.cpp:1391 - sampling using Euler method
+[INFO ] stable-diffusion.cpp:1428 - generating image: 1/1 - seed 42
+  |==================================================| 10/10 - 477.33s/it
+[INFO ] stable-diffusion.cpp:1466 - sampling completed, taking 4613.73s
+[INFO ] stable-diffusion.cpp:1474 - generating 1 latent images completed, taking 4613.85s
+[INFO ] stable-diffusion.cpp:1477 - decoding 1 latents
+[INFO ] stable-diffusion.cpp:1487 - latent 1 decoded, taking 490.42s
+[INFO ] stable-diffusion.cpp:1491 - decode_first_stage completed, taking 490.43s
+[INFO ] stable-diffusion.cpp:1614 - txt2img completed in 5105.87s
+save result image to 'output.png'  now renamed as 20250118-firstIMAGE1344x768.png
+
+
+TEST2
+./sd.exe -m ./dreamshaper_8.safetensors --cfg-scale 5 --steps 10 --sampling-method euler -W 512 -H 256 -p 'fantasy stone-age village world high detail, fantasy, realistic, light effect, hyper detail, volumetric lighting, cinematic, macro, depth of field, blur, red light and clouds from the back, anime style' -o 20250118-test_1steps.png
+[INFO ] stable-diffusion.cpp:195  - loading model from './dreamshaper_8.safetensors'
+[INFO ] model.cpp:888  - load ./dreamshaper_8.safetensors using safetensors format
+[INFO ] stable-diffusion.cpp:242  - Version: SD 1.x
+[INFO ] stable-diffusion.cpp:275  - Weight type:                 f16
+[INFO ] stable-diffusion.cpp:276  - Conditioner weight type:     f16
+[INFO ] stable-diffusion.cpp:277  - Diffusion model weight type: f16
+[INFO ] stable-diffusion.cpp:278  - VAE weight type:             f16
+  |==================================================| 1130/1130 - 250.00it/s
+[INFO ] stable-diffusion.cpp:516  - total params memory size = 1969.78MB (VRAM 0.00MB, RAM 1969.78MB): clip 235.06MB(RAM), unet 1640.25MB(RAM), vae 94.47MB(RAM), controlnet 0.00MB(VRAM), pmid 0.00MB(RAM)
+[INFO ] stable-diffusion.cpp:520  - loading model from './dreamshaper_8.safetensors' completed, taking 2.98s
+[INFO ] stable-diffusion.cpp:550  - running in eps-prediction mode
+[INFO ] stable-diffusion.cpp:682  - Attempting to apply 0 LoRAs
+[INFO ] stable-diffusion.cpp:1235 - apply_loras completed, taking 0.00s
+[INFO ] stable-diffusion.cpp:1368 - get_learned_condition completed, taking 2057 ms
+[INFO ] stable-diffusion.cpp:1391 - sampling using Euler method
+[INFO ] stable-diffusion.cpp:1428 - generating image: 1/1 - seed 42
+  |==================================================| 10/10 - 31.26s/it
+[INFO ] stable-diffusion.cpp:1466 - sampling completed, taking 316.97s
+[INFO ] stable-diffusion.cpp:1474 - generating 1 latent images completed, taking 317.10s
+[INFO ] stable-diffusion.cpp:1477 - decoding 1 latents
+[INFO ] stable-diffusion.cpp:1487 - latent 1 decoded, taking 64.99s
+[INFO ] stable-diffusion.cpp:1491 - decode_first_stage completed, taking 64.99s
+[INFO ] stable-diffusion.cpp:1614 - txt2img completed in 384.15s
+save result image to '20250118-IMAGE512x256_stoneage_10steps.png'
+
+```
+import subprocess
+mc = ['sd.exe',
+ '-m',
+ 'dreamshaper_8.safetensors',
+ '--cfg-scale',
+ '5',
+ '--steps',
+ '1',
+ '-W',
+ '512',
+ '-H',
+ '256',
+ '-p',
+ 'fantasy stone-age village world high detail, fantasy, realistic',
+ '-o',
+ '20250118-test_1steps.png']
+res = subprocess.call(mc,shell=True)
+```
+[INFO ] stable-diffusion.cpp:195  - loading model from 'dreamshaper_8.safetensors'
+[INFO ] model.cpp:888  - load dreamshaper_8.safetensors using safetensors format
+[INFO ] stable-diffusion.cpp:242  - Version: SD 1.x
+[INFO ] stable-diffusion.cpp:275  - Weight type:                 f16
+[INFO ] stable-diffusion.cpp:276  - Conditioner weight type:     f16
+[INFO ] stable-diffusion.cpp:277  - Diffusion model weight type: f16
+[INFO ] stable-diffusion.cpp:278  - VAE weight type:             f16
+  |==================================================| 1130/1130 - 250.00it/s
+[INFO ] stable-diffusion.cpp:516  - total params memory size = 1969.78MB (VRAM 0.00MB, RAM 1969.78MB): clip 235.06MB(RAM), unet 1640.25MB(RAM), vae 94.47MB(RAM), controlnet 0.00MB(VRAM), pmid 0.00MB(RAM)
+[INFO ] stable-diffusion.cpp:520  - loading model from 'dreamshaper_8.safetensors' completed, taking 2.81s
+[INFO ] stable-diffusion.cpp:550  - running in eps-prediction mode
+[INFO ] stable-diffusion.cpp:682  - Attempting to apply 0 LoRAs
+[INFO ] stable-diffusion.cpp:1235 - apply_loras completed, taking 0.00s
+[INFO ] stable-diffusion.cpp:1368 - get_learned_condition completed, taking 1075 ms
+[INFO ] stable-diffusion.cpp:1391 - sampling using Euler A method
+[INFO ] stable-diffusion.cpp:1428 - generating image: 1/1 - seed 42
+  |==================================================| 1/1 - 31.65s/it
+[INFO ] stable-diffusion.cpp:1466 - sampling completed, taking 31.68s
+[INFO ] stable-diffusion.cpp:1474 - generating 1 latent images completed, taking 31.79s
+[INFO ] stable-diffusion.cpp:1477 - decoding 1 latents
+[INFO ] stable-diffusion.cpp:1487 - latent 1 decoded, taking 67.06s
+[INFO ] stable-diffusion.cpp:1491 - decode_first_stage completed, taking 67.06s
+[INFO ] stable-diffusion.cpp:1614 - txt2img completed in 99.93s
+save result image to '20250118-test_1steps.png'
+
+
+------------
+
+python .\_RUN-SDCPP.py
+Logfile_4NWJO.png  CREATED
+/IMAGINE sci-fi village world inside a glass sphere , high detail, fantasy, realistic, light effect, hyper detail, volumetric lighting, cinematic, macro, depth of field, blur, red light and clouds from the back, highly detailed epic cinematic concept art cg render made in maya, blender and photoshop, octane render, excellent composition, dynamic dramatic cinematic lighting, aesthetic, very inspirational, world inside a glass sphere by james gurney by artgerm with james jean, joe fenton and tristan eaton by ross tran, fine details, 4k resolution
+Number of Steps: 10
+Saving the Generated image with dreamshaper_8 as: IMAGE_SDCPP_4NWJO.png
+[INFO ] stable-diffusion.cpp:195  - loading model from 'dreamshaper_8.safetensors'
+[INFO ] model.cpp:888  - load dreamshaper_8.safetensors using safetensors format
+[INFO ] stable-diffusion.cpp:242  - Version: SD 1.x
+[INFO ] stable-diffusion.cpp:275  - Weight type:                 f16
+[INFO ] stable-diffusion.cpp:276  - Conditioner weight type:     f16
+[INFO ] stable-diffusion.cpp:277  - Diffusion model weight type: f16
+[INFO ] stable-diffusion.cpp:278  - VAE weight type:             f16
+  |==================================================| 1130/1130 - 200.00it/s
+[INFO ] stable-diffusion.cpp:516  - total params memory size = 1969.78MB (VRAM 0.00MB, RAM 1969.78MB): clip 235.06MB(RAM), unet 1640.25MB(RAM), vae 94.47MB(RAM), controlnet 0.00MB(VRAM), pmid 0.00MB(RAM)
+[INFO ] stable-diffusion.cpp:520  - loading model from 'dreamshaper_8.safetensors' completed, taking 2.80s
+[INFO ] stable-diffusion.cpp:550  - running in eps-prediction mode
+[INFO ] stable-diffusion.cpp:682  - Attempting to apply 0 LoRAs
+[INFO ] stable-diffusion.cpp:1235 - apply_loras completed, taking 0.00s
+[INFO ] stable-diffusion.cpp:1368 - get_learned_condition completed, taking 1984 ms
+[INFO ] stable-diffusion.cpp:1391 - sampling using Euler method
+[INFO ] stable-diffusion.cpp:1428 - generating image: 1/1 - seed 42
+  |==================================================| 10/10 - 31.41s/it
+[INFO ] stable-diffusion.cpp:1466 - sampling completed, taking 312.87s
+[INFO ] stable-diffusion.cpp:1474 - generating 1 latent images completed, taking 313.01s
+[INFO ] stable-diffusion.cpp:1477 - decoding 1 latents
+[INFO ] stable-diffusion.cpp:1487 - latent 1 decoded, taking 64.68s
+[INFO ] stable-diffusion.cpp:1491 - decode_first_stage completed, taking 64.68s
+[INFO ] stable-diffusion.cpp:1614 - txt2img completed in 379.68s
+save result image to 'IMAGE_SDCPP_4NWJO.png'
+Completed in 0:06:22.814748
+
+
+-----
+
+Test with CivitaAI prompt
+a fantasy city built within a vast cave, sleek glass buildings, elegant walkways between towers, illustration, raining, dark and moody lighting, digital art, oil painting, fantasy, 8 k, trending on artstation, detailed
+OrIGINaL IMAGE 52265249.jpeg
+
+> python .\_RUN-SDCPP.py
+Logfile_GMGSB.png  CREATED
+/IMAGINE a fantasy city built within a vast cave, sleek glass buildings, elegant walkways between towers, illustration, raining, dark and moody lighting, digital art, oil painting, fantasy, 8 k, trending on artstation, detailed
+Number of Steps: 10
+Saving the Generated image with dreamshaper_8 as: IMAGE_SDCPP_GMGSB.png
+[INFO ] stable-diffusion.cpp:195  - loading model from 'dreamshaper_8.safetensors'
+[INFO ] model.cpp:888  - load dreamshaper_8.safetensors using safetensors format
+[INFO ] stable-diffusion.cpp:242  - Version: SD 1.x
+[INFO ] stable-diffusion.cpp:275  - Weight type:                 f16
+[INFO ] stable-diffusion.cpp:276  - Conditioner weight type:     f16
+[INFO ] stable-diffusion.cpp:277  - Diffusion model weight type: f16
+[INFO ] stable-diffusion.cpp:278  - VAE weight type:             f16
+  |==================================================| 1130/1130 - 200.00it/s
+[INFO ] stable-diffusion.cpp:516  - total params memory size = 1969.78MB (VRAM 0.00MB, RAM 1969.78MB): clip 235.06MB(RAM), unet 1640.25MB(RAM), vae 94.47MB(RAM), controlnet 0.00MB(VRAM), pmid 0.00MB(RAM)
+[INFO ] stable-diffusion.cpp:520  - loading model from 'dreamshaper_8.safetensors' completed, taking 3.25s
+[INFO ] stable-diffusion.cpp:550  - running in eps-prediction mode
+[INFO ] stable-diffusion.cpp:682  - Attempting to apply 0 LoRAs
+[INFO ] stable-diffusion.cpp:1235 - apply_loras completed, taking 0.00s
+[INFO ] stable-diffusion.cpp:1368 - get_learned_condition completed, taking 1229 ms
+[INFO ] stable-diffusion.cpp:1391 - sampling using Euler method
+[INFO ] stable-diffusion.cpp:1428 - generating image: 1/1 - seed 42
+  |==================================================| 10/10 - 30.67s/it
+[INFO ] stable-diffusion.cpp:1466 - sampling completed, taking 324.79s
+[INFO ] stable-diffusion.cpp:1474 - generating 1 latent images completed, taking 324.98s
+[INFO ] stable-diffusion.cpp:1477 - decoding 1 latents
+[INFO ] stable-diffusion.cpp:1487 - latent 1 decoded, taking 64.80s
+[INFO ] stable-diffusion.cpp:1491 - decode_first_stage completed, taking 64.80s
+[INFO ] stable-diffusion.cpp:1614 - txt2img completed in 391.02s
+save result image to 'IMAGE_SDCPP_GMGSB.png'
+Completed in 0:06:34.646274
+Saved all images METADATA in IMAGE_SDCPP_GMGSB.png
+{'parameters': 'a fantasy city built within a vast cave, sleek glass buildings, elegant walkways between towers, illustration, raining, dark and moody lighting, digital art, oil painting, fantasy, 8 k, trending on artstation, detailed\nSteps: 10, CFG scale: 5.000000, Guidance: 3.500000, Seed: 42, Size: 512x256, Model: dreamshaper_8.safetensors, RNG: cuda, Sampler: euler, Version: stable-diffusion.cpp'}
+
+
+
+
+
+
+
+
+
