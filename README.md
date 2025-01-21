@@ -37,7 +37,10 @@ save result image to 'output.png'  now renamed as 20250118-firstIMAGE1344x768.pn
 ```
 
 ### Stable Diffusion CPP
-A pure CPP implementation of the diffusion transformers library inspired by llama.cpp
+A pure CPP implementation of the [diffusion transformers library inspired by llama.cpp](https://github.com/leejet/stable-diffusion.cpp)
+- GitHub repo [here](https://github.com/leejet/stable-diffusion.cpp)
+- Per Compiled libraries [here](https://github.com/leejet/stable-diffusion.cpp/releases)
+> note that if you have a GPU you must download the Vulkan or the CUDA binaries
 
 It allows you to run diffusion models even on CPU, using also quantized versions of the models.
 - model can be downloaded [here](https://huggingface.co/Lykon/DreamShaper)
