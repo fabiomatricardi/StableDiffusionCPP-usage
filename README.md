@@ -1,6 +1,6 @@
 # StableDiffusionCPP-usage
 Create images with dreamshaper_8 on your CPU
-<img src='https://github.com/fabiomatricardi/StableDiffusionCPP-usage/raw/main/20250118-firstIMAGE1344x768.png' width=900>
+<img src='https://github.com/fabiomatricardi/StableDiffusionCPP-usage/raw/main/img/20250118-firstIMAGE1344x768.png' width=900>
 
 Image generated with dreamshaper_8 and sd.cpp
 ```
